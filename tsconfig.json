@@ -5,6 +5,7 @@
     "strictNullChecks": true,
     "module": "es6",
     "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "target": "es5",
     "allowJs": false,
     "moduleResolution": "node",
