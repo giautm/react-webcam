@@ -58,8 +58,8 @@
 </head>
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@16.13.1/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
   <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
   <script src="https://unpkg.com/babel-transform-in-browser@6.4.6/dist/btib.min.js"></script>
   <script src="../dist/react-webcam.js"></script>
@@ -70,19 +70,11 @@
       constructor(props) {
         super(props);
         this.state = {
-          ket: null,
           screenshot: null,
           tab: 0
         };
       }
 
-      componentDidMount() {
-        setInterval(() => {
-          this.setState({
-            ket: `${Date.now()}`,
-          })
-        }, 4000)
-      }
       handleClick = () => {
         const screenshot = this.webcam.getScreenshot();
         this.setState({ screenshot });
@@ -94,9 +86,61 @@
             <h1>react-webcam</h1>
             <Webcam
               audio={false}
-              key={this.state.ket}
               ref={node => this.webcam = node}
             />
+            <div>
+              <h2>CSS Filters & style prop</h2>
+              <div className='webcams'>
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                />
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                  style={{ transform: 'rotate(180deg)' }}
+                />
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                />
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                  style={{ transform: 'rotate(180deg)' }}
+                />
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                />
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                  style={{ transform: 'rotate(180deg)' }}
+                />
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                />
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                  style={{ transform: 'rotate(180deg)' }}/>
+                <Webcam
+                  audio={false}
+                  width='212'
+                  height='160'
+                />
+              </div>
+            </div>
             <div>
               <h2>Screenshots</h2>
               <div className='screenshots'>
